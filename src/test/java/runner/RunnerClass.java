@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        dryRun = true,
+        dryRun = false,
         monochrome = true,
         plugin = {
                 "pretty",
