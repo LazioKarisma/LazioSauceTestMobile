@@ -27,7 +27,7 @@ public class Test {
 	    List<WebElement> listProducts;
 
 	    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/colorIV")
-	    List<WebElement> listProductColors;
+		static  List<WebElement> listProductColors;
 
 	    @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/plusIV")
 	    WebElement btnPlusQty;
@@ -42,21 +42,21 @@ public class Test {
 	@AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/fullNameET")
     static MobileElement inpFullName;
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/address1ET")
-    WebElement inpAddressLineOne;
+    WebElement inputAddress1;
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/cityET")
-    WebElement inpCity;
+    WebElement inputCity;
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/zipET")
-    WebElement inpZipCode;
+    WebElement inputZipCode;
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/countryET")
-    WebElement inpCountry;
+    WebElement inputCountry;
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/paymentBtn")
-    WebElement btnToPayment;
+    WebElement btnPayment;
 
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/nameET")
-    WebElement inpFullNameCard;
+    WebElement inputFullNameCard;
 
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/cardNumberET")
-    WebElement inpCardNumber;
+    WebElement inputCardNumber;
 
     @AndroidFindBy(id = "com.saucelabs.mydemoapp.android:id/expirationDateET")
     WebElement inpExpirationDate;
@@ -89,17 +89,12 @@ public class Test {
 		cap.setCapability("udid", "emulator-5554");
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("platFormVersion", "9");
-//		cap.setCapability("appPackage","com.android.calculator2");
-//		cap.setCapability("appActivity", "com.android.calculator2.Calculator");
 		cap.setCapability("appPackage", "com.saucelabs.mydemoapp.android");
 		cap.setCapability("appWaitPackage", "com.saucelabs.mydemoapp.android");
-		cap.setCapability("appWaitActivity", "com.*");
 
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		appiumDriver = new AppiumDriver<MobileElement>(url, cap);
 		
-        listProductColors.stream().filter(element -> element.getAttribute("content-desc").equals(colorName)).findFirst().get().click();
-
 		checkout();
 //		andLogin();
 	}
