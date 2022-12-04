@@ -1,4 +1,4 @@
-Feature: Checkout
+Feature: EndToEndProduct
 
   @EndToEndProduct
   Scenario: As a User, I want to checkout Sauce Lab Back Packs with blue color and quantity is 2

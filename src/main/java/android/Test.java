@@ -41,7 +41,7 @@ String APK = PROJECT_PATH + "/src/test/resources/apk/saucelabs.apk";
 	}
 	private static AndroidDriver<AndroidElement> fillAndroidDriver(DesiredCapabilities cap) throws MalformedURLException {
 		AndroidDriver<AndroidElement> androidDriver;
-		androidDriver = new AndroidDriver<>(new URL("http://127.0.0.1:4725/wd/hub"), cap);
+		androidDriver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		return androidDriver;
 	}
 

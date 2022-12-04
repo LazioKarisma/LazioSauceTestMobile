@@ -4,6 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
+        dryRun = true,
         monochrome = true,
         plugin = {
                 "pretty",
@@ -13,9 +14,10 @@ import io.cucumber.testng.CucumberOptions;
                 "message:target/cucumber-report/cucumber.ndjson",
                 "html:target/result.html",
                 "me.jvt.cucumber.report.PrettyReports:report"},
-        features = "src/test/resources",
+        features = "src/test/resources/feature/SauceLab.feature",
         glue = {"step", "hook"},
-        tags = "@EndToEndProduct")
+        tags = "@EndToEndProduct",
+        snippets = CucumberOptions.SnippetType.CAMELCASE)
 public class RunnerClass extends AbstractTestNGCucumberTests {
 
 }
