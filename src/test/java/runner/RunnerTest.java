@@ -4,9 +4,10 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        dryRun = false,
-        monochrome = true,
-        plugin = {
+//        dryRun = true,
+       // monochrome = true,
+        dryRun= true,
+        plugin = {        		
                 "pretty",
                 "json:target/cucumber.json",
                 "html:target/cucumber-report/cucumber.html",
@@ -14,10 +15,10 @@ import io.cucumber.testng.CucumberOptions;
                 "message:target/cucumber-report/cucumber.ndjson",
                 "html:target/result.html",
                 "me.jvt.cucumber.report.PrettyReports:report"},
-        features = "src/test/resources/feature/SauceLab.feature",
-        glue = {"step", "hook"},
-        tags = "@EndToEndProduct",
+        features = "src/test/resources",
+        glue = {"steps", "hooks"},
+        tags = "@SauceLab",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
-public class RunnerClass extends AbstractTestNGCucumberTests {
+public class RunnerTest extends AbstractTestNGCucumberTests {
 
 }

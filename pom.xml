@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>android</groupId>
@@ -14,6 +15,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jvm.options>-Xmx256M</jvm.options>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -25,6 +27,7 @@
 			<version>1.0.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
@@ -68,7 +71,8 @@
 
 
 	<build>
-		<pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (perhaps moved to parent pom) -->
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
+				defaults (perhaps moved to parent pom) -->
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -124,6 +128,9 @@
 					<configuration>
 						<testFailureIgnore>true</testFailureIgnore>
 						<useSystemClassLoader>false</useSystemClassLoader>
+						<!-- <includes>
+							<include>**/RunnerClass*.java</include>
+						</includes> -->
 					</configuration>
 				</plugin>
 			</plugins>

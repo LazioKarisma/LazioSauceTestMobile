@@ -1,6 +1,6 @@
-Feature: EndToEndProduct
+Feature: SauceLab
 
-  @EndToEndProduct
+  @SauceLab
   Scenario: As a User, I want to checkout Sauce Lab Back Packs with blue color and quantity is 2
     Given User is already on Sauce Labs Apps
     When User choose product
